@@ -13,10 +13,10 @@ allowed-tools: Bash, Read, Write, AskUserQuestion, WebSearch
 Research ANY topic across Reddit, X, and the web. Surface what people are actually discussing, recommending, and debating right now.
 
 Use cases:
-- **Recommendations**: "best Claude Code skills" → get a LIST of specific skills people mention
-- **News**: "what's happening with OpenAI" → get current events and updates
-- **How-to**: "Midjourney prompts" → learn techniques, then get copy-paste prompts
-- **General**: any topic → understand what the community is saying
+- **Prompting**: "Midjourney prompts", "ChatGPT image generation" → learn techniques, get copy-paste prompts
+- **Recommendations**: "best Claude Code skills", "top AI tools" → get a LIST of specific things people mention
+- **News**: "what's happening with OpenAI", "latest AI announcements" → current events and updates
+- **General**: any topic you're curious about → understand what the community is saying
 
 ## CRITICAL: Parse User Intent
 
@@ -25,9 +25,9 @@ Before doing anything, parse the user's input for:
 1. **TOPIC**: What they want to learn about (e.g., "web app mockups", "Claude Code skills", "image generation")
 2. **TARGET TOOL** (if specified): Where they'll use the prompts (e.g., "Nano Banana Pro", "ChatGPT", "Midjourney")
 3. **QUERY TYPE**: What kind of research they want:
+   - **PROMPTING** - "X prompts", "prompting for X", "X best practices" → User wants to learn techniques and get copy-paste prompts
    - **RECOMMENDATIONS** - "best X", "top X", "what X should I use", "recommended X" → User wants a LIST of specific things
    - **NEWS** - "what's happening with X", "X news", "latest on X" → User wants current events/updates
-   - **HOW-TO** - "how to X", "X tutorial", "learn X" → User wants educational content
    - **GENERAL** - anything else → User wants broad understanding of the topic
 
 Common patterns:
@@ -124,10 +124,10 @@ Choose search queries based on QUERY_TYPE:
 - Search for: `{TOPIC} announcement update`
 - Goal: Find current events and recent developments
 
-**If HOW-TO** ("how to X", "tutorial"):
-- Search for: `{TOPIC} tutorial guide 2026`
-- Search for: `{TOPIC} best practices`
-- Goal: Find educational content
+**If PROMPTING** ("X prompts", "prompting for X"):
+- Search for: `{TOPIC} prompts examples 2026`
+- Search for: `{TOPIC} techniques tips`
+- Goal: Find prompting techniques and examples to create copy-paste prompts
 
 **If GENERAL** (default):
 - Search for: `{TOPIC} 2026`
