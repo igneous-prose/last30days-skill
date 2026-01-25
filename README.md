@@ -105,6 +105,41 @@ This example shows /last30days learning **domain-specific prompting techniques**
 
 ---
 
+## Example: ClawdBot Use Cases (Community Research)
+
+**Query:** `/last30days best clawdbot use cases`
+
+**Research Output:**
+> ClawdBot is a self-hosted AI assistant that runs on your devices and connects via messaging apps (Telegram, WhatsApp, Discord, Slack, iMessage). Unlike ChatGPT/Claude, it has persistent memory and can proactively message you. The killer feature is its 24/7 autonomous operation - it handles multi-day tasks, monitors for replies, and initiates contact.
+
+**Most mentioned use cases:**
+
+🏆 Top 5 by engagement:
+
+1. **Email/Calendar automation** - mentioned 8x+ (r/selfhosted, @dreetje, @danpeguine, MacStories)
+   - Morning briefings, spam filtering, auto-replies, recruiter declines
+2. **Task management via chat** - mentioned 6x (r/LocalLLaMA, @danpeguine, multiple X posts)
+   - Todoist integration, importance scoring, time-blocking tasks
+3. **Overnight coding agent** - mentioned 5x (@bffmike 225 likes, r/LocalLLaMA)
+   - "Drove my coding agents from 12:30-7am while I snoozed"
+   - Pulls repos, runs tests, commits if clean
+4. **Smart home + life admin** - mentioned 5x (r/selfhosted, VelvetShark)
+   - WHOOP health data, Philips Hue, HomeAssistant, SSH to homelab
+5. **Browser automation** - mentioned 4x (@steipete 243 likes, MacStories)
+   - Car negotiation via email/PDF, restaurant reservations via ElevenLabs calls
+
+**Notable single mentions:**
+- Custom meditation generation with TTS + ambient audio
+- Built a full website (Stumblereads.com) from phone while putting baby to sleep
+- Ray-Ban Meta glasses integration
+- WhatsApp as control interface for everything
+
+**Research Stats:** 9 Reddit threads (161 upvotes, 95 comments) + 19 X posts (2,018 likes, 96 reposts) from r/LocalLLaMA, r/selfhosted, @steipete, @danpeguine, @dreetje
+
+This example shows /last30days as a **product research tool** - discovering real-world use cases and community sentiment for any tool or product, complete with engagement metrics that tell you what people actually care about.
+
+---
+
 ## Example: iOS App Mockup (Nano Banana Pro)
 
 **Query:** `/last30days prompting tips for nano banana pro for ios designs`
