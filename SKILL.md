@@ -215,35 +215,26 @@ Identify from the ACTUAL RESEARCH OUTPUT:
 
 **FIRST - What I learned (based on QUERY_TYPE):**
 
-**If RECOMMENDATIONS** - Show specific things mentioned in STACKED CARD format:
+**If RECOMMENDATIONS** - Show specific things mentioned with sources:
 ```
 🏆 Most mentioned:
 
-Tool: [Specific name]
-Mentions: {n}x
-Use Case: [what it does / why people recommend it]
+[Tool Name] - {n}x mentions
+Use Case: [what it does]
 Sources: @handle1, @handle2, r/sub, blog.com
-────────────────────────────────────────────────────────
-Tool: [Specific name]
-Mentions: {n}x
+
+[Tool Name] - {n}x mentions
 Use Case: [what it does]
 Sources: @handle3, r/sub2, Complex
-────────────────────────────────────────────────────────
-Tool: [Specific name]
-Mentions: {n}x
-Use Case: [what it does]
-Sources: r/sub, @handle4, Variety
-────────────────────────────────────────────────────────
 
 Notable mentions: [other specific things with 1-2 mentions]
 ```
 
 **CRITICAL for RECOMMENDATIONS:**
-- Use stacked card format (responsive, doesn't break on narrow terminals)
-- Separate cards with horizontal rule: ────────────────────────────────────────────────────────
-- "Sources:" line MUST include actual @handles from X posts (e.g., @LONGLIVE47, @ByDobson)
+- Each item MUST have a "Sources:" line with actual @handles from X posts (e.g., @LONGLIVE47, @ByDobson)
 - Include subreddit names (r/hiphopheads) and web sources (Complex, Variety)
 - Parse @handles from research output and include the highest-engagement ones
+- Format naturally - tables work well for wide terminals, stacked cards for narrow
 
 **If PROMPTING/NEWS/GENERAL** - Show synthesis and patterns:
 ```
