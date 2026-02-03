@@ -147,3 +147,62 @@ def validate_sources(requested: str, available: str, include_web: bool = False) 
         return 'x', None
 
     return requested, None
+
+
+def get_x_source(config: Dict[str, Any]) -> Optional[str]:
+    """Determine the best available X/Twitter source.
+
+    Priority: Bird (free) → xAI (paid API)
+
+    Args:
+        config: Configuration dict from get_config()
+
+    Returns:
+        'bird' if Bird is installed and authenticated,
+        'xai' if XAI_API_KEY is configured,
+        None if no X source available.
+    """
+    # Import here to avoid circular dependency
+    from . import bird_x
+
+    # Check Bird first (free option)
+    if bird_x.is_bird_installed():
+        username = bird_x.is_bird_authenticated()
+        if username:
+            return 'bird'
+
+    # Fall back to xAI if key exists
+    if config.get('XAI_API_KEY'):
+        return 'xai'
+
+    return None
+
+
+def get_x_source_status(config: Dict[str, Any]) -> Dict[str, Any]:
+    """Get detailed X source status for UI decisions.
+
+    Returns:
+        Dict with keys: source, bird_installed, bird_authenticated,
+        bird_username, xai_available, can_install_bird
+    """
+    from . import bird_x
+
+    bird_status = bird_x.get_bird_status()
+    xai_available = bool(config.get('XAI_API_KEY'))
+
+    # Determine active source
+    if bird_status["authenticated"]:
+        source = 'bird'
+    elif xai_available:
+        source = 'xai'
+    else:
+        source = None
+
+    return {
+        "source": source,
+        "bird_installed": bird_status["installed"],
+        "bird_authenticated": bird_status["authenticated"],
+        "bird_username": bird_status["username"],
+        "xai_available": xai_available,
+        "can_install_bird": bird_status["can_install"],
+    }
