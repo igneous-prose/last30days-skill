@@ -239,13 +239,18 @@ KEY PATTERNS I'll use:
 
 **THEN - Stats (right before invitation):**
 
+**CRITICAL: Calculate actual totals from the research output.**
+- Count posts/threads from each section
+- Sum engagement: parse `[Xlikes, Yrt]` from each X post, `[Xpts, Ycmt]` from Reddit
+- Identify top voices: highest-engagement @handles from X, most active subreddits
+
 ```
 ---
 ✅ All agents reported back!
 ├─ 🟠 Reddit: {n} threads │ {sum} upvotes │ {sum} comments
 ├─ 🔵 X: {n} posts │ {sum} likes │ {sum} reposts (via Bird/xAI)
 ├─ 🌐 Web: {n} pages │ {domains}
-└─ Top voices: r/{sub1}, r/{sub2} │ @{handle1}, @{handle2}
+└─ Top voices: @{handle1} ({n}K likes), @{handle2} │ r/{sub1}, r/{sub2}
 ```
 
 **LAST - Invitation:**
