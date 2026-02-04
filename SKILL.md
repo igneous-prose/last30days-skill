@@ -1,6 +1,6 @@
 ---
-name: last30daystest
-description: TEST VERSION - Research a topic from the last 30 days on Reddit + X + Web with Bird CLI support.
+name: last30days
+description: Research a topic from the last 30 days on Reddit + X + Web with Bird CLI support.
 argument-hint: "[topic] for [tool]" or "[topic]"
 context: fork
 agent: Explore
@@ -8,18 +8,14 @@ disable-model-invocation: true
 allowed-tools: Bash, Read, Write, AskUserQuestion, WebSearch
 ---
 
-# last30daystest: TEST VERSION with Bird CLI Support
-
-This is the TEST version of /last30days with Bird CLI integration for free X/Twitter search.
-
-**What's new:**
-- Bird CLI support for free X/Twitter search (no API key needed)
-- Uses browser cookies for authentication
-- Auto-detects Bird if installed (no prompts)
-- Shows Bird install instructions in promo if not configured
-- Falls back to WebSearch if Bird not available
+# last30days: Research the Last 30 Days
 
 Research ANY topic across Reddit, X, and the web. Surface what people are actually discussing, recommending, and debating right now.
+
+**Features:**
+- Bird CLI support for free X/Twitter search (no API key needed)
+- Auto-detects Bird if installed (no prompts)
+- Falls back to xAI API or WebSearch if Bird not available
 
 Use cases:
 - **Prompting**: "photorealistic people in Nano Banana Pro", "Midjourney prompts", "ChatGPT image generation" → learn techniques, get copy-paste prompts
@@ -108,7 +104,7 @@ chmod 600 ~/.config/last30days/.env
 
 **Step 1: Run the research script**
 ```bash
-python3 ~/.claude/skills/last30daystest/scripts/last30days.py "$ARGUMENTS" --emit=compact 2>&1
+python3 ~/.claude/skills/last30days/scripts/last30days.py "$ARGUMENTS" --emit=compact 2>&1
 ```
 
 The script will automatically:
