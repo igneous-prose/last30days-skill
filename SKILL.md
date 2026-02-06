@@ -8,13 +8,11 @@ allowed-tools: Bash, Read, Write, AskUserQuestion, WebSearch
 
 # last30days: Research Any Topic from the Last 30 Days
 
-**YOUR FIRST ACTION: Run this command. Do NOT describe this skill. Do NOT summarize workflows. EXECUTE.**
+Research ANY topic across Reddit, X, and the web. Surface what people are actually discussing, recommending, and debating right now.
 
-```bash
-python3 ~/.claude/skills/last30days/scripts/last30days.py "$ARGUMENTS" --emit=compact 2>&1
-```
+## STEP 1: Parse User Intent & Acknowledge
 
-While that runs, parse the user's input for:
+**Before running anything**, parse the user's input for:
 
 1. **TOPIC**: What they want to learn about (e.g., "web app mockups", "Claude Code skills", "image generation")
 2. **TARGET TOOL** (if specified): Where they'll use the prompts (e.g., "Nano Banana Pro", "ChatGPT", "Midjourney")
@@ -39,6 +37,16 @@ Common patterns:
 - `TOPIC = [extracted topic]`
 - `TARGET_TOOL = [extracted tool, or "unknown" if not specified]`
 - `QUERY_TYPE = [RECOMMENDATIONS | NEWS | HOW-TO | GENERAL]`
+
+**Then output a brief acknowledgment before starting:**
+
+> Researching **{TOPIC}** — searching Reddit for upvotes and comments, X for likes and reposts, and the web for recent coverage. Hang tight...
+
+**Then immediately run the research script:**
+
+```bash
+python3 ~/.claude/skills/last30days/scripts/last30days.py "$ARGUMENTS" --emit=compact 2>&1
+```
 
 ---
 
