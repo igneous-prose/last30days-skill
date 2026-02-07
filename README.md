@@ -2,6 +2,8 @@
 
 **The AI world reinvents itself every month. This Claude Code skill keeps you current.** /last30days researches your topic across Reddit, X, and the web from the last 30 days, finds what the community is actually upvoting and sharing, and writes you a prompt that works today, not six months ago. Whether it's Ralph Wiggum loops, Suno music prompts, or the latest Midjourney techniques, you'll prompt like someone who's been paying attention.
 
+**New in V2:** Free X search via [Bird CLI](https://github.com/steipete/bird) (no xAI key needed), smart supplemental search that drills into key @handles and subreddits discovered during research, `--days=N` for flexible lookback windows, and automatic model fallback so it works even if your OpenAI org isn't verified for newer models. [Full changelog below.](#whats-new-in-v2)
+
 **Best for prompt research**: discover what prompting techniques actually work for any tool (ChatGPT, Midjourney, Claude, Figma AI, etc.) by learning from real community discussions and best practices.
 
 **But also great for anything trending**: music, culture, news, product recommendations, viral trends, or any question where "what are people saying right now?" matters.
@@ -763,7 +765,7 @@ If your OpenAI org doesn't have access to a model (e.g., unverified for gpt-4.1)
 
 **Reddit JSON enrichment** - Fetches real upvote and comment counts from Reddit's free API for every thread, giving you actual engagement signals.
 
-**Marketplace plugin support** - Ships with `.claude-plugin/plugin.json` for Claude Code marketplace compatibility.
+**Marketplace plugin support** - Ships with `.claude-plugin/plugin.json` for Claude Code marketplace compatibility. (Inspired by [@galligan](https://github.com/galligan)'s PR)
 
 **Windows Unicode fix** - Handles Unicode output correctly on Windows terminals. (Thanks [@JosephOIbrahim](https://github.com/JosephOIbrahim))
 
